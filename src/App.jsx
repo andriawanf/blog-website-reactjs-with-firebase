@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Navbar from './components/Navbar';
 import PageNotFound from './pages/PageNotFound';
+import CreatePost from "./pages/create-blog/CreatePost";
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/create-post' element={<CreatePost />} />
           <Route path='*' element={<PageNotFound />} />
         </Routes>
       </Router>
