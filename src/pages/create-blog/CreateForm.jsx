@@ -32,7 +32,7 @@ export default function CreateForm() {
         resetField("description");
     }
 
-    let [isOpen, setIsOpen] = useState(true);
+    let [isOpen, setIsOpen] = useState(false);
 
     function closeModal() {
         setIsOpen(false)
@@ -89,13 +89,13 @@ export default function CreateForm() {
                                 <p className="mt-2 text-sm text-red-600">{errors.description?.message}</p>
                                 <p className="mt-3 text-sm leading-6 text-gray-600">Write a few sentences about yourself.</p>
                             </div>
-                            <button className="text-base text-white font-semibold px-3.5 py-2.5 rounded-lg bg-indigo-600 hover:bg-indigo-500" onClick={openModal}>Post blog</button>
+                            <button className="inline-flex justify-center px-4 py-2.5 text-sm font-bold text-blue-900 bg-blue-100 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2" >Post blog</button>
                         </div>
                     </div>
                 </div>
             </form>
             <Transition appear show={isOpen} as={Fragment}>
-                <Dialog as="div" className="relative z-10" onClose={closeModal}>
+                <Dialog as="div" className="relative z-50" onClose={closeModal}>
                     <Transition.Child
                         as={Fragment}
                         enter="ease-out duration-300"
@@ -105,10 +105,10 @@ export default function CreateForm() {
                         leaveFrom="opacity-100"
                         leaveTo="opacity-0"
                     >
-                        <div className="fixed inset-0 bg-black/25" />
+                        <div className="fixed inset-0 bg-gray-900/25 backdrop-blur-md" />
                     </Transition.Child>
 
-                    <div className="fixed inset-0 overflow-y-auto">
+                    <div className="fixed inset-0 overflow-y-auto font-comfortaa">
                         <div className="flex items-center justify-center min-h-full p-4 text-center">
                             <Transition.Child
                                 as={Fragment}
@@ -119,10 +119,10 @@ export default function CreateForm() {
                                 leaveFrom="opacity-100 scale-100"
                                 leaveTo="opacity-0 scale-95"
                             >
-                                <Dialog.Panel className="w-full max-w-md p-6 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
+                                <Dialog.Panel className="w-full max-w-lg p-6 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
                                     <Dialog.Title
                                         as="h3"
-                                        className="text-lg font-medium leading-6 text-gray-900"
+                                        className="text-xl font-bold leading-6 text-gray-900"
                                     >
                                         Post blog successful
                                     </Dialog.Title>
