@@ -27,11 +27,12 @@ export default function CreateForm() {
             username: user?.displayName,
             user_id: user?.uid
         });
+        openModal();
         resetField("title");
         resetField("description");
     }
 
-    let [isOpen, setIsOpen] = useState(false)
+    let [isOpen, setIsOpen] = useState(true);
 
     function closeModal() {
         setIsOpen(false)
@@ -42,7 +43,7 @@ export default function CreateForm() {
     }
 
     return (
-        <>
+        <div>
             <form className="container" onSubmit={handleSubmit(onCreatePost)}>
                 <div className="relative px-6 space-y-12 pt-14 lg:px-40 lg:pt-44">
                     <div className="pb-12">
@@ -88,7 +89,7 @@ export default function CreateForm() {
                                 <p className="mt-2 text-sm text-red-600">{errors.description?.message}</p>
                                 <p className="mt-3 text-sm leading-6 text-gray-600">Write a few sentences about yourself.</p>
                             </div>
-                            <button className="text-base text-white font-semibold px-3.5 py-2.5 rounded-lg bg-indigo-600 hover:bg-indigo-500" onClick={() => {}}>Post blog</button>
+                            <button className="text-base text-white font-semibold px-3.5 py-2.5 rounded-lg bg-indigo-600 hover:bg-indigo-500" onClick={openModal}>Post blog</button>
                         </div>
                     </div>
                 </div>
@@ -123,11 +124,11 @@ export default function CreateForm() {
                                         as="h3"
                                         className="text-lg font-medium leading-6 text-gray-900"
                                     >
-                                        Payment successful
+                                        Post blog successful
                                     </Dialog.Title>
                                     <div className="mt-2">
                                         <p className="text-sm text-gray-500">
-                                            Your payment has been successfully submitted. We’ve sent
+                                            Your blog has been successfully Post. We’ve sent
                                             you an email with all of the details of your order.
                                         </p>
                                     </div>
@@ -147,6 +148,6 @@ export default function CreateForm() {
                     </div>
                 </Dialog>
             </Transition>
-        </>
+        </div>
     )
 }
