@@ -49,13 +49,13 @@ export default function Navbar() {
                 <div className="flex lg:flex-1">
                     <Link to='/' className="-m-1.5 p-1.5">
                         <span className="sr-only">Your Company</span>
-                        <img className="w-auto h-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" />
+                        <img className="w-auto h-8" src="https://tailwindui.com/img/logos/mark.svg?color=black&shade=600" alt="" />
                     </Link>
                 </div>
                 <div className="flex lg:hidden">
                     <button
                         type="button"
-                        className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+                        className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-900"
                         onClick={() => setMobileMenuOpen(true)}
                     >
                         <span className="sr-only">Open main menu</span>
@@ -88,14 +88,14 @@ export default function Navbar() {
                                                     className="relative flex items-center p-4 text-sm leading-6 rounded-lg group gap-x-6 hover:bg-gray-50"
                                                 >
                                                     <div className="flex items-center justify-center flex-none rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
-                                                        <item.icon className="w-6 h-6 text-gray-600 group-hover:text-indigo-600" aria-hidden="true" />
+                                                        <item.icon className="w-6 h-6 text-gray-600 group-hover:text-sky-500" aria-hidden="true" />
                                                     </div>
                                                     <div className="flex-auto">
-                                                        <Link to={item.href} className="block font-semibold text-gray-900">
+                                                        <Link to={item.href} className="block font-semibold text-gray-900 hover:text-sky-500">
                                                             {item.name}
                                                             <span className="absolute inset-0" />
                                                         </Link>
-                                                        <p className="mt-1 text-gray-600">{item.description}</p>
+                                                        <p className="mt-1 text-gray-500">{item.description}</p>
                                                     </div>
                                                 </div>
                                             ))}
@@ -105,9 +105,9 @@ export default function Navbar() {
                                                 <a
                                                     key={item.name}
                                                     href={item.href}
-                                                    className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
+                                                    className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-sky-100 hover:text-sky-500"
                                                 >
-                                                    <item.icon className="flex-none w-5 h-5 text-gray-400" aria-hidden="true" />
+                                                    <item.icon className="flex-none w-5 h-5 text-gray-400 hover:text-sky-500" aria-hidden="true" />
                                                     {item.name}
                                                 </a>
                                             ))}
@@ -133,11 +133,11 @@ export default function Navbar() {
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end ">
                     <Menu as="div" className="relative">
                         {!user ?
-                            (<Link to="/login" className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                            (<Link to="/login" className="rounded-md bg-sky-500 px-4 py-2.5 text-sm font-semibold text-sky-100 shadow-sm hover:bg-sky-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600">
                                 Log in <span aria-hidden="true"></span>
                             </Link>) :
                             (<Menu.Button className='flex'>
-                                <img className="w-8 h-8 rounded-full ring-2 hover:ring-indigo-600" src={user?.photoURL} alt="" />
+                                <img className="w-8 h-8 rounded-full ring-2 hover:ring-sky-500" src={user?.photoURL} alt="" />
                             </Menu.Button>)
                         }
                         <Transition
@@ -155,10 +155,10 @@ export default function Navbar() {
                                         className="relative flex items-center text-sm leading-6 rounded-lg group gap-x-6 hover:bg-gray-50"
                                     >
                                         <div className="flex items-center justify-center flex-none rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
-                                            <UserIcon className="w-5 h-6 text-gray-600 group-hover:text-indigo-600" aria-hidden="true" />
+                                            <UserIcon className="w-5 h-6 text-gray-600 group-hover:text-sky-500" aria-hidden="true" />
                                         </div>
                                         <div className="flex-auto">
-                                            <a href="/" className="block font-semibold text-gray-900 group-hover:underline">
+                                            <a href="/" className="block font-semibold text-gray-900 group-hover:text-sky-500">
                                                 {user?.displayName}
                                                 <span className="absolute inset-0" />
                                             </a>
@@ -170,10 +170,10 @@ export default function Navbar() {
                                         className="relative flex items-center text-sm leading-6 rounded-lg group gap-x-6 hover:bg-gray-50"
                                     >
                                         <div className="flex items-center justify-center flex-none rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
-                                            <Cog6ToothIcon className="w-5 h-6 text-gray-600 group-hover:text-indigo-600" aria-hidden="true" />
+                                            <Cog6ToothIcon className="w-5 h-6 text-gray-600 group-hover:text-sky-500" aria-hidden="true" />
                                         </div>
                                         <div className="flex-auto">
-                                            <a href="/" className="block font-semibold text-gray-900 group-hover:underline">
+                                            <a href="/" className="block font-semibold text-gray-900 group-hover:text-sky-500">
                                                 Settings
                                                 <span className="absolute inset-0" />
                                             </a>

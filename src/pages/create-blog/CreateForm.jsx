@@ -58,7 +58,7 @@ export default function CreateForm() {
                                     Title
                                 </label>
                                 <div className="mt-2">
-                                    <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-400 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                                    <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-400 focus-within:ring-2 focus-within:ring-inset focus-within:ring-sky-500 sm:max-w-md">
                                         <input
                                             type="text"
                                             name="title"
@@ -82,14 +82,14 @@ export default function CreateForm() {
                                         name="description"
                                         rows={5}
                                         {...register("description")}
-                                        className="block w-full rounded-md border-0 py-1.5 px-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-400 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                        className="block w-full rounded-md border-0 py-1.5 px-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-400 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-500 sm:text-sm sm:leading-6"
                                         defaultValue={''}
                                     />
                                 </div>
                                 <p className="mt-2 text-sm text-red-600">{errors.description?.message}</p>
                                 <p className="mt-3 text-sm leading-6 text-gray-600">Write a few sentences about yourself.</p>
                             </div>
-                            <button className="inline-flex justify-center px-4 py-2.5 text-sm font-bold text-blue-900 bg-blue-100 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2" >Post blog</button>
+                            <button className="inline-flex justify-center px-4 py-2.5 text-sm font-bold text-sky-100 bg-sky-500 border border-transparent rounded-md hover:bg-sky-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 focus-visible:ring-offset-2" >Post blog</button>
                         </div>
                     </div>
                 </div>
@@ -122,7 +122,7 @@ export default function CreateForm() {
                                 <Dialog.Panel className="w-full max-w-lg p-6 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
                                     <Dialog.Title
                                         as="h3"
-                                        className="text-xl font-bold leading-6 text-gray-900"
+                                        className="text-xl font-bold leading-6 text-sky-500"
                                     >
                                         Post blog successful
                                     </Dialog.Title>
@@ -136,7 +136,7 @@ export default function CreateForm() {
                                     <div className="mt-4">
                                         <button
                                             type="button"
-                                            className="inline-flex justify-center px-4 py-2 text-sm font-medium text-blue-900 bg-blue-100 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                                            className="inline-flex justify-center px-4 py-2 text-sm font-medium border border-transparent rounded-md bg-sky-500 text-sky-100 hover:bg-sky-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
                                             onClick={closeModal}
                                         >
                                             Got it, thanks!
