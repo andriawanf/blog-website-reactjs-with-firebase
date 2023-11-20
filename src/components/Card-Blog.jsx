@@ -1,4 +1,6 @@
 /* eslint-disable react/prop-types */
+import { Link } from "react-router-dom";
+
 
 export default function CardBlog({ blog }) {
     return (
@@ -10,10 +12,10 @@ export default function CardBlog({ blog }) {
             </div>
             <div className="relative group">
                 <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-blue-500">
-                    <a href="#">
+                    <Link  to={`/blog/${blog.id}`}>
                         <span className="absolute inset-0"></span>
                         {blog.title}
-                    </a>
+                    </Link>
                 </h3>
                 <p className="mt-5 text-sm leading-6 text-gray-600 line-clamp-3">{blog.description}</p>
             </div>
