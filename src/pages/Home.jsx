@@ -1,5 +1,6 @@
 import Blog from "./blogs/blog";
 
+
 export default function Home() {
     return (
         <div>
