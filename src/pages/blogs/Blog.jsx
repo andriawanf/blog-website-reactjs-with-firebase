@@ -5,6 +5,7 @@ import { getDocs, collection } from "firebase/firestore";
 import { db } from "../../config/firebase";
 import { useEffect } from "react";
 import SkeletonCard from "../../components/SkeletonCard";
+import { ArrowLongRightIcon } from '@heroicons/react/24/solid'
 
 export default function Blog() {
 
@@ -32,11 +33,17 @@ export default function Blog() {
     }, []);
 
     return (
-        <div className="py-24 bg-gray-100 sm:py-32">
+        <div className="py-24 bg-gray-100">
             <div className="px-6 mx-auto max-w-7xl lg:px-8">
-                <div className="max-w-2xl mx-auto lg:mx-0">
-                    <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">From the blog</h2>
-                    <p className="mt-2 text-lg leading-8 text-gray-600">Learn how to grow your business with our expert advice.</p>
+                <div className="flex flex-col w-full mx-auto lg:mx-0 lg:flex-row lg:justify-between">
+                    <div>
+                        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:leading-[3.5rem] sm:font-bold sm:text-5xl sm:max-w-sm">Our most popular blogs</h2>
+                        <p className="mt-4 text-lg leading-8 text-gray-600 sm:max-w-lg">The latest news, tips, and advice to help you run your knowledge with less fuss.</p>
+                    </div>
+                    <a href="#" className="flex justify-center px-3 py-2 mt-6 text-sm font-medium text-white sm:py-3 sm:self-end rounded-xl bg-sky-500 sm:px-4 sm:text-base hover:bg-sky-600 group">
+                        <button>Read All Blogs</button>
+                        <ArrowLongRightIcon className="w-6 h-6 ml-1 group-hover:ml-2"/>
+                    </a>
                 </div>
                 {loading ? (<SkeletonCard />) : (
                     <div className="grid max-w-2xl grid-cols-1 pt-10 mx-auto mt-10 border-t border-gray-300 gap-x-8 gap-y-16 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">

@@ -4,7 +4,7 @@ import Blog from "./blogs/blog";
 export default function Home() {
     return (
         <div>
-            <div className="relative px-6 pt-14 lg:px-8">
+            <div className="relative px-6 lg:h-screen pt-14 lg:px-8">
                 <div
                     className="absolute inset-x-0 overflow-hidden -top-40 -z-10 transform-gpu blur-3xl sm:-top-80"
                     aria-hidden="true"
@@ -17,33 +17,30 @@ export default function Home() {
                         }}
                     />
                 </div>
-                <div className="max-w-4xl py-32 mx-auto sm:py-48 lg:py-40">
-                    <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-                        <div className="relative px-3 py-1 text-sm leading-6 text-gray-600 rounded-full ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-                            Announcing our next round of funding.{' '}
-                            <a href="#" className="font-semibold text-sky-500">
-                                <span className="absolute inset-0" aria-hidden="true" />
-                                Read more <span aria-hidden="true">&rarr;</span>
-                            </a>
+                <div className="py-10 sm:py-48 lg:pt-12">
+                    <div className="grid w-full grid-cols-12 gap-4">
+                        <div className="grid grid-cols-2 col-span-12 gap-4 overflow-hidden sm:col-span-4 sm:grid-rows-2">
+                            <div className="relative h-56 sm:col-span-2 lg:h-[19.5rem] overflow-hidden z-10 rounded-2xl cursor-pointer">
+                                <img src="https://images.unsplash.com/photo-1630091003936-aea522c1e8c3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fGRldmVsb3BlcnxlbnwwfDB8MHx8fDI%3D" alt="" className="absolute top-0 left-0 z-0 object-cover object-center w-full h-full overflow-hidden transition duration-300 ease-out transform scale-100 rounded-2xl hover:scale-110" />
+                                <div className="absolute bottom-0 left-0 z-10 w-full p-4 lg:p-6 rounded-2xl bg-gradient-to-t from-black/70 to-black/2">
+                                    <p className="hidden text-white lg:font-medium lg:text-sm lg:block">Technology</p>
+                                    <h1 className="mt-2 text-sm font-semibold leading-relaxed text-white lg:text-xl">Why Financial Freedom is importan for your Future</h1>
+                                </div>
+                            </div>
+                            <div className="relative h-56 p-6 sm:col-span-2 lg:h-[19.5rem] rounded-2xl overflow-hidden cursor-pointer">
+                                <img src="https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzF8fGRldmVsb3BlcnxlbnwwfDB8MHx8fDI%3D" alt="" className="absolute top-0 left-0 z-0 object-cover object-center w-full h-full overflow-hidden transition duration-300 ease-out transform scale-100 rounded-2xl hover:scale-110" />
+                                <div className="absolute bottom-0 left-0 z-10 w-full p-4 lg:p-6 rounded-2xl bg-gradient-to-t from-black/70 to-black/2">
+                                    <p className="hidden text-white lg:font-medium lg:text-sm lg:block">Technology</p>
+                                    <h1 className="mt-2 text-sm font-semibold leading-relaxed text-white lg:text-xl">Why Financial Freedom is importan for your Future</h1>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div className="text-center">
-                        <h1 className="text-4xl font-bold leading-loose tracking-wide text-gray-900 sm:text-6xl">
-                            Explore the Extraordinary: Your Daily Dose of Curiosity!
-                        </h1>
-                        <p className="mt-6 text-lg leading-8 text-gray-600">
-                        Nurture your curiosity with our thoughtfully curated content that aims to feed your mind. From thought-provoking articles to mind-expanding visuals, we&lsquo;re here to cultivate a space for continuous learning and discovery.
-                        </p>
-                        <div className="flex items-center justify-center mt-10 gap-x-6">
-                            <a
-                                href="#"
-                                className="rounded-md bg-sky-500 px-4 py-2.5 text-sm font-semibold text-sky-100 shadow-sm hover:bg-sky-600 hover:text-sky-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600"
-                            >
-                                Get started
-                            </a>
-                            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-                                Learn more <span aria-hidden="true">→</span>
-                            </a>
+                        <div className="relative col-span-12 p-6 h-80 sm:col-span-8 lg:h-[40rem] overflow-hidden rounded-2xl cursor-pointer">
+                            <img src="https://images.unsplash.com/photo-1603575448360-153f093fd0b2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fGRldmVsb3BlcnxlbnwwfDB8MHx8fDI%3D" alt="" className="absolute top-0 left-0 z-0 object-cover object-center w-full h-full overflow-hidden transition duration-300 ease-out transform scale-100 rounded-2xl hover:scale-110" />
+                            <div className="absolute bottom-0 left-0 z-10 w-full p-6 lg:p-10 rounded-2xl bg-gradient-to-t from-black/70 to-black/2">
+                                <p className="hidden text-lg font-medium text-white lg:block">Technology</p>
+                                <h1 className="mt-2 text-2xl font-semibold leading-relaxed text-white lg:text-5xl">Why Financial Freedom is importan for your Future</h1>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -62,6 +59,6 @@ export default function Home() {
             </div>
 
             <Blog />
-        </div>
+        </div >
     )
 }
