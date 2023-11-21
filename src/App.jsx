@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import PageNotFound from './pages/PageNotFound';
 import CreatePost from "./pages/create-blog/CreatePost";
 import BlogDetails from './pages/blogs/BlogDetails';
+import BlogList from './pages/blogs/BlogList';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/create-post' element={<CreatePost />} />
           <Route path='/blog/:blogId' element={<BlogDetails />} />
+          <Route path='/blogs' element={<BlogList />} />
           <Route path='*' element={<PageNotFound />} />
         </Routes>
       </Router>

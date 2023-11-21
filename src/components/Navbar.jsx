@@ -67,7 +67,7 @@ export default function Navbar() {
                         (
                             <Popover className="relative">
                                 <Popover.Button className="flex items-center text-sm font-semibold leading-6 text-gray-900 gap-x-1">
-                                    Blog
+                                    Create
                                     <ChevronDownIcon className="flex-none w-5 h-5 text-gray-400" aria-hidden="true" />
                                 </Popover.Button>
 
@@ -119,14 +119,14 @@ export default function Navbar() {
                         ""
                     }
 
+                    <Link to="/blogs" className="text-sm font-semibold leading-6 text-gray-900">
+                        Blogs
+                    </Link>
                     <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-                        Features
+                        About Us
                     </a>
                     <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-                        Marketplace
-                    </a>
-                    <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-                        Company
+                        Contact
                     </a>
                 </Popover.Group>
 
