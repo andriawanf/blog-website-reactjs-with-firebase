@@ -12,7 +12,7 @@ export default function CardBlog({ blog }) {
             </div>
             <div className="relative group">
                 <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-blue-500">
-                    <Link  to={`/blog/${blog.id}`}>
+                    <Link to={`/blog/${blog.id}`}>
                         <span className="absolute inset-0"></span>
                         {blog.title}
                     </Link>

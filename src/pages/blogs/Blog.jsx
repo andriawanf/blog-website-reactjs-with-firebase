@@ -1,36 +1,13 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useState } from "react";
+import { AppContext } from "../../App";
 import CardBlog from "../../components/Card-Blog";
-import { getDocs, collection } from "firebase/firestore";
-import { db } from "../../config/firebase";
-import { useEffect } from "react";
 import SkeletonCard from "../../components/SkeletonCard";
 import { ArrowLongRightIcon } from '@heroicons/react/24/solid'
+import { useContext } from "react";
 
 export default function Blog() {
-
-    const [blogLists, setBlogLists] = useState(null);
-    const [loading, setLoading] = useState(true);
-    const postRef = collection(db, "blogs-post");
-
-
-
-    useEffect(() => {
-        const getBlogs = async () => {
-            try {
-                const data = await getDocs(postRef);
-                setBlogLists(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-            } catch (error) {
-                console.error("Error fetching data details: ", error);
-            } finally {
-                setTimeout(() => {
-                    setLoading(false);
-                }, 2000);
-            }
-        };
-
-        getBlogs();
-    }, []);
+    const {blogLists, IsLoading} = useContext(AppContext);
+    
 
     return (
         <div className="py-24 bg-gray-100">
@@ -45,7 +22,7 @@ export default function Blog() {
                         <ArrowLongRightIcon className="w-6 h-6 ml-1 group-hover:ml-2"/>
                     </a>
                 </div>
-                {loading ? (<SkeletonCard />) : (
+                {IsLoading ? (<SkeletonCard />) : (
                     <div className="grid max-w-2xl grid-cols-1 pt-10 mx-auto mt-10 border-t border-gray-300 gap-x-8 gap-y-16 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
                         {blogLists?.map((blog) =>
                             <CardBlog key={blog.id} blog={blog} />
