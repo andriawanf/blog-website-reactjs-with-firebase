@@ -2,12 +2,14 @@
 /* eslint-disable no-unused-vars */
 import Blog from "./blogs/blog";
 import Header from "../components/Header";
+import Categories from "../components/Categoris";
+import Partnerships from "../components/Partnerships";
 
 export default function Home() {
    
 
     return (
-        <div>
+        <div className="font-comfortaa">
             <div className="relative px-6 lg:h-screen pt-14 lg:px-8">
                 <div
                     className="absolute inset-x-0 overflow-hidden -top-40 -z-10 transform-gpu blur-3xl sm:-top-80"
@@ -36,6 +38,8 @@ export default function Home() {
                 </div>
             </div>
             <Blog />
+            <Categories />
+            <Partnerships />
         </div >
     )
 }

@@ -12,7 +12,7 @@ export default function BlogList() {
                     {blogLists?.map((blog, index) =>
 
                         <div key={index} className="lg:flex">
-                            <img className="object-cover w-full h-56 rounded-lg lg:w-64" src={blog.photo_cover} alt="" />
+                            <img className="object-cover w-full h-56 rounded-lg lg:w-64" src={blog.photo_cover} alt={blog.tag_blog} loading="lazy"/>
 
                             <div className="flex flex-col justify-between py-6 lg:mx-6">
                                 <a href="#" className="text-xl font-semibold text-gray-800 hover:underline ">

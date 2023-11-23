@@ -35,7 +35,7 @@ function App() {
     getBlogs();
   }, []);
   return (
-    <AppContext.Provider value={{ blogLists, IsLoading, setBlogLists, setIsLoading }} className='container font-comfortaa'>
+    <AppContext.Provider value={{ blogLists, IsLoading, setBlogLists, setIsLoading }} className="container font-comfortaa">
       <Router>
         <Navbar />
         <Routes>

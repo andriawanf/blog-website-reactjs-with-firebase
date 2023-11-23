@@ -87,27 +87,9 @@ export default function CreateForm() {
         setIsOpen(true)
     }
 
-    
-
-    // 
-    // Function to upload the image to Firebase Storage
-    // const uploadImageToFirebase = async (file) => {
-    //     const storageRef = ref(storage, `blog-images/${user?.uid}/${file.name}`);
-    //     const uploadTask = uploadBytesResumable(storageRef, file);
-
-    //     try {
-    //         await uploadTask;
-    //         const downloadURL = await getDownloadURL(storageRef);
-    //         return downloadURL;
-    //     } catch (error) {
-    //         console.error("Error uploading image: ", error);
-    //         return null;
-    //     }
-    // };
-
     return (
         <div>
-            <form className="container" onSubmit={handleSubmit(onCreatePost)}>
+            <form className="container font-comfortaa" onSubmit={handleSubmit(onCreatePost)}>
                 <div className="relative px-6 space-y-12 pt-14 lg:px-40 lg:pt-44">
                     <div className="pb-12">
                         <h2 className="text-3xl font-semibold leading-7 text-gray-900">Create Blog</h2>

@@ -2,7 +2,7 @@
 import { AppContext } from "../../App";
 import CardBlog from "../../components/Card-Blog";
 import SkeletonCard from "../../components/SkeletonCard";
-import { ArrowLongRightIcon } from '@heroicons/react/24/solid'
+import { ArrowLongRightIcon } from '@heroicons/react/24/solid';
 import { useContext } from "react";
 
 export default function Blog() {
@@ -23,7 +23,7 @@ export default function Blog() {
                     </a>
                 </div>
                 {IsLoading ? (<SkeletonCard />) : (
-                    <div className="grid max-w-2xl grid-cols-1 pt-10 mx-auto mt-10 border-t border-gray-300 gap-x-8 gap-y-16 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+                    <div className="grid max-w-2xl grid-cols-1 pt-10 mx-auto mt-10 border-t border-gray-300 gap-x-8 gap-y-8 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
                         {blogLists?.map((blog) =>
                             <CardBlog key={blog.id} blog={blog} />
                         )}
