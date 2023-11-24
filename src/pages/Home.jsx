@@ -4,9 +4,12 @@ import Blog from "./blogs/blog";
 import Header from "../components/Header";
 import Categories from "../components/Categoris";
 import Partnerships from "../components/Partnerships";
+import ContextBlogs from "../context/context-blogs";
+import Testimonials from "./Testimonials";
+import Newslatter from "../components/Newslatter";
 
 export default function Home() {
-   
+
 
     return (
         <div className="font-comfortaa">
@@ -23,7 +26,9 @@ export default function Home() {
                         }}
                     />
                 </div>
-                <Header />
+                <ContextBlogs>
+                    <Header />
+                </ContextBlogs>
                 <div
                     className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
                     aria-hidden="true"
@@ -37,9 +42,13 @@ export default function Home() {
                     />
                 </div>
             </div>
-            <Blog />
+            <ContextBlogs>
+                <Blog />
+            </ContextBlogs>
             <Categories />
+            <Testimonials />
             <Partnerships />
+            <Newslatter />
         </div >
     )
 }

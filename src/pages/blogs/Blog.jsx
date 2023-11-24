@@ -1,9 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { AppContext } from "../../App";
+
 import CardBlog from "../../components/Card-Blog";
 import SkeletonCard from "../../components/SkeletonCard";
 import { ArrowLongRightIcon } from '@heroicons/react/24/solid';
 import { useContext } from "react";
+import { AppContext } from "../../context/context-blogs";
 
 export default function Blog() {
     const {blogLists, IsLoading} = useContext(AppContext);

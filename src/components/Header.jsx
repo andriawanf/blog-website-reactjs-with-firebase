@@ -1,7 +1,8 @@
 import { useContext } from "react";
-import { AppContext } from "../App";
+
 import { Link } from "react-router-dom";
 import { ArrowLongRightIcon } from '@heroicons/react/24/solid'
+import { AppContext } from "../context/context-blogs";
 
 export default function Header() {
     const { blogLists } = useContext(AppContext);

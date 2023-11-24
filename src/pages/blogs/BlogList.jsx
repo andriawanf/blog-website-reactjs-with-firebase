@@ -1,5 +1,6 @@
 import { useContext } from "react";
-import { AppContext } from "../../App";
+import { AppContext } from "../../context/context-blogs";
+
 
 export default function BlogList() {
     const { blogLists } = useContext(AppContext);
@@ -20,7 +21,7 @@ export default function BlogList() {
                                 </a>
                                 <div className="text-sm text-gray-500">
                                     <p>Creator: {blog.username}</p>
-                                    <p>On: 20 October 2019</p>
+                                    <p>On: {blog.created_at}</p>
                                 </div>
                             </div>
                         </div>
