@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { db } from '../../config/firebase';
 import SkeletonBlog from "../../components/SkeletonBlog";
 import { LinkIcon } from '@heroicons/react/24/solid';
-import ReactMarkdown from 'react-markdown';
+import DOMPurify from "dompurify"
 
 export default function BlogDetails() {
     const { blogId } = useParams();
@@ -58,7 +58,7 @@ export default function BlogDetails() {
                                     <LinkIcon className="w-4 h-4 text-gray-900 cursor-pointer lg:w-7 lg:h-7" />
                                 </div>
                                 <div className="mt-10 lg:mt-12">
-                                    <ReactMarkdown className="font-medium leading-relaxed text-gray-900 text-md lg:leading-8 lg:text-base">{blog.description}</ReactMarkdown>
+                                    <div dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(blog.description)}} />
                                 </div>
                             </div>
                         </div>

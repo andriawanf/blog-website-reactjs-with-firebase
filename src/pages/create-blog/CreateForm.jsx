@@ -6,8 +6,10 @@ import { auth, db, storage } from "../../config/firebase";
 import { ref, getDownloadURL, uploadBytes } from "firebase/storage";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Dialog, Transition } from '@headlessui/react';
-import { Fragment, useState } from 'react';
+import { Fragment, useState, useRef } from 'react';
 import { PhotoIcon } from '@heroicons/react/24/solid'
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 
 const tagsBlog = [
@@ -18,12 +20,32 @@ const tagsBlog = [
     'Sport',
 ]
 
+const modules = {
+    toolbar: [
+        [{header: [1, 2, 3, 4, 5, 6, false]}],
+        [{font: []}],
+        [{size: []}],
+        ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+        [
+            {list: "ordered"},
+            {list: "bullet"},
+            {list: "-1"},
+            {list: "+1"}
+        ],
+        ["link", "image", "video"]
+    ]
+}
+
 export default function CreateForm() {
     const [user] = useAuthState(auth);
+    const descRef = useRef("");
+    const [valueDesc, setValueDesc] = useState('');
+
+    
 
     const schema = yup.object().shape({
         title: yup.string().required("please add the title first!"),
-        description: yup.string().required("You must add a description!"),
+        // description: yup.string().required("You must add a description!"),
         tag_blog: yup.string().required("You must choose one of the tag!"),
         photo_cover: yup.string().required("You must choose a photo!"),
     });
@@ -37,25 +59,25 @@ export default function CreateForm() {
     // Display image from input user
     const [image, setImage] = useState("");
 
-    const handleFileChange = async(e) => {
+    const handleFileChange = async (e) => {
         const file = e.target.files[0];
 
         // You can perform additional validation, e.g., checking file type or size
 
         if (file) {
             const storageRef = ref(storage, `blog_images/${file.name}`);
-    
+
             try {
-              // Upload the file to Firebase Storage
-              await uploadBytes(storageRef, file);
-        
-              // Get the download URL of the uploaded file
-              const downloadURL = await getDownloadURL(storageRef);
-        
-              // Update the state with the download URL
-              setImage(downloadURL);
+                // Upload the file to Firebase Storage
+                await uploadBytes(storageRef, file);
+
+                // Get the download URL of the uploaded file
+                const downloadURL = await getDownloadURL(storageRef);
+
+                // Update the state with the download URL
+                setImage(downloadURL);
             } catch (error) {
-              console.error("Error uploading image to Firebase Storage:", error);
+                console.error("Error uploading image to Firebase Storage:", error);
             }
         }
     };
@@ -66,6 +88,7 @@ export default function CreateForm() {
         await addDoc(postRef, {
             ...data,
             username: user?.displayName,
+            description: valueDesc,
             user_id: user?.uid,
             foto_user: user?.photoURL,
             created_at: new Date().toLocaleDateString(),
@@ -86,6 +109,7 @@ export default function CreateForm() {
     function openModal() {
         setIsOpen(true)
     }
+
 
     return (
         <div>
@@ -123,13 +147,22 @@ export default function CreateForm() {
                                     Description
                                 </label>
                                 <div className="mt-2">
-                                    <textarea
+                                    {/* <textarea
                                         id="description"
                                         name="description"
                                         rows={5}
                                         {...register("description")}
                                         className="block w-full rounded-md border-0 py-1.5 px-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-400 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-500 sm:text-sm sm:leading-6"
                                         defaultValue={''}
+                                    /> */}
+                                    <ReactQuill 
+                                    id="description"
+                                    name="description"
+                                    theme="snow" 
+                                    value={descRef.current.value}
+                                    ref={descRef}
+                                    modules={modules}
+                                    onChange={() => setValueDesc(descRef.current.value)}
                                     />
                                 </div>
                                 <p className="mt-2 text-sm text-red-600">{errors.description?.message}</p>

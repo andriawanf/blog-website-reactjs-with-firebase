@@ -5,8 +5,8 @@ import Header from "../components/Header";
 import Categories from "../components/Categoris";
 import Partnerships from "../components/Partnerships";
 import ContextBlogs from "../context/context-blogs";
-import Testimonials from "./Testimonials";
 import Newslatter from "../components/Newslatter";
+import Testimonials from "../components/Testimonials";
 
 export default function Home() {
 
